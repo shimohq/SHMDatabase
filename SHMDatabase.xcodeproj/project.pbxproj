@@ -13,9 +13,19 @@
 		8F7C727D2181BA530062000C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C727C2181BA530062000C /* Assets.xcassets */; };
 		8F7C72802181BA530062000C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C727E2181BA530062000C /* LaunchScreen.storyboard */; };
 		8F7C72832181BA530062000C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72822181BA530062000C /* main.m */; };
+		8F7C728C2181BC770062000C /* SHMDatabaseSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C728B2181BC770062000C /* SHMDatabaseSDK.m */; };
+		8F7C728F2181C0E90062000C /* SHMAutoSqlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C728E2181C0E90062000C /* SHMAutoSqlUtil.m */; };
+		8F7C72922181C15A0062000C /* SHMDBVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72912181C15A0062000C /* SHMDBVersion.m */; };
+		8F7C72952181C1A20062000C /* NSObject+SHMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72942181C1A20062000C /* NSObject+SHMDatabase.m */; };
+		8F7C72982181C2250062000C /* NSArray+SHMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72972181C2250062000C /* NSArray+SHMDatabase.m */; };
+		8F7C729B2181C26D0062000C /* SHMDbTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C729A2181C26D0062000C /* SHMDbTools.m */; };
+		EB63B07121F70B97D7BBE365 /* Pods_SHMDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06211271BC0696BED8B98182 /* Pods_SHMDatabase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06211271BC0696BED8B98182 /* Pods_SHMDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHMDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0BCD9CFA30B3C9E47EAEC6 /* Pods-SHMDatabase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHMDatabase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHMDatabase/Pods-SHMDatabase.release.xcconfig"; sourceTree = "<group>"; };
+		5EBABB20EEFF58B7563F9FD1 /* Pods-SHMDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHMDatabase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHMDatabase/Pods-SHMDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 		8F7C72702181BA500062000C /* SHMDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHMDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7C72732181BA500062000C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F7C72742181BA500062000C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +36,19 @@
 		8F7C727F2181BA530062000C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F7C72812181BA530062000C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F7C72822181BA530062000C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F7C728A2181BC770062000C /* SHMDatabaseSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDatabaseSDK.h; sourceTree = "<group>"; };
+		8F7C728B2181BC770062000C /* SHMDatabaseSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMDatabaseSDK.m; sourceTree = "<group>"; };
+		8F7C728D2181C0E90062000C /* SHMAutoSqlUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMAutoSqlUtil.h; sourceTree = "<group>"; };
+		8F7C728E2181C0E90062000C /* SHMAutoSqlUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMAutoSqlUtil.m; sourceTree = "<group>"; };
+		8F7C72902181C15A0062000C /* SHMDBVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDBVersion.h; sourceTree = "<group>"; };
+		8F7C72912181C15A0062000C /* SHMDBVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMDBVersion.m; sourceTree = "<group>"; };
+		8F7C72932181C1A20062000C /* NSObject+SHMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SHMDatabase.h"; sourceTree = "<group>"; };
+		8F7C72942181C1A20062000C /* NSObject+SHMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SHMDatabase.m"; sourceTree = "<group>"; };
+		8F7C72962181C2250062000C /* NSArray+SHMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+SHMDatabase.h"; sourceTree = "<group>"; };
+		8F7C72972181C2250062000C /* NSArray+SHMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SHMDatabase.m"; sourceTree = "<group>"; };
+		8F7C72992181C26D0062000C /* SHMDbTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDbTools.h; sourceTree = "<group>"; };
+		8F7C729A2181C26D0062000C /* SHMDbTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMDbTools.m; sourceTree = "<group>"; };
+		8F7C729C2181C4F00062000C /* SHMDBConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDBConst.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +56,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB63B07121F70B97D7BBE365 /* Pods_SHMDatabase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B54C3BA1FD54BE4791E6230 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06211271BC0696BED8B98182 /* Pods_SHMDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F7C72672181BA500062000C = {
 			isa = PBXGroup;
 			children = (
 				8F7C72722181BA500062000C /* SHMDatabase */,
 				8F7C72712181BA500062000C /* Products */,
+				FBDFD925636FF089FE327408 /* Pods */,
+				5B54C3BA1FD54BE4791E6230 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +94,7 @@
 			children = (
 				8F7C72732181BA500062000C /* AppDelegate.h */,
 				8F7C72742181BA500062000C /* AppDelegate.m */,
+				8F7C72892181BBFE0062000C /* SHMDatabase */,
 				8F7C72762181BA500062000C /* ViewController.h */,
 				8F7C72772181BA500062000C /* ViewController.m */,
 				8F7C72792181BA500062000C /* Main.storyboard */,
@@ -71,6 +106,35 @@
 			path = SHMDatabase;
 			sourceTree = "<group>";
 		};
+		8F7C72892181BBFE0062000C /* SHMDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C728A2181BC770062000C /* SHMDatabaseSDK.h */,
+				8F7C728B2181BC770062000C /* SHMDatabaseSDK.m */,
+				8F7C728D2181C0E90062000C /* SHMAutoSqlUtil.h */,
+				8F7C728E2181C0E90062000C /* SHMAutoSqlUtil.m */,
+				8F7C72902181C15A0062000C /* SHMDBVersion.h */,
+				8F7C72912181C15A0062000C /* SHMDBVersion.m */,
+				8F7C72932181C1A20062000C /* NSObject+SHMDatabase.h */,
+				8F7C72942181C1A20062000C /* NSObject+SHMDatabase.m */,
+				8F7C72962181C2250062000C /* NSArray+SHMDatabase.h */,
+				8F7C72972181C2250062000C /* NSArray+SHMDatabase.m */,
+				8F7C72992181C26D0062000C /* SHMDbTools.h */,
+				8F7C729A2181C26D0062000C /* SHMDbTools.m */,
+				8F7C729C2181C4F00062000C /* SHMDBConst.h */,
+			);
+			path = SHMDatabase;
+			sourceTree = "<group>";
+		};
+		FBDFD925636FF089FE327408 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EBABB20EEFF58B7563F9FD1 /* Pods-SHMDatabase.debug.xcconfig */,
+				5E0BCD9CFA30B3C9E47EAEC6 /* Pods-SHMDatabase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F7C72862181BA530062000C /* Build configuration list for PBXNativeTarget "SHMDatabase" */;
 			buildPhases = (
+				024426586F0295F8A2DB5274 /* [CP] Check Pods Manifest.lock */,
 				8F7C726C2181BA500062000C /* Sources */,
 				8F7C726D2181BA500062000C /* Frameworks */,
 				8F7C726E2181BA500062000C /* Resources */,
+				5AB3B4FAC72FEF127F209FCF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,13 +202,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		024426586F0295F8A2DB5274 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SHMDatabase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AB3B4FAC72FEF127F209FCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SHMDatabase/Pods-SHMDatabase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SHMDatabase/Pods-SHMDatabase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F7C726C2181BA500062000C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7C729B2181C26D0062000C /* SHMDbTools.m in Sources */,
+				8F7C72982181C2250062000C /* NSArray+SHMDatabase.m in Sources */,
 				8F7C72782181BA500062000C /* ViewController.m in Sources */,
+				8F7C72922181C15A0062000C /* SHMDBVersion.m in Sources */,
+				8F7C728F2181C0E90062000C /* SHMAutoSqlUtil.m in Sources */,
+				8F7C72952181C1A20062000C /* NSObject+SHMDatabase.m in Sources */,
 				8F7C72832181BA530062000C /* main.m in Sources */,
+				8F7C728C2181BC770062000C /* SHMDatabaseSDK.m in Sources */,
 				8F7C72752181BA500062000C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +408,7 @@
 		};
 		8F7C72872181BA530062000C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EBABB20EEFF58B7563F9FD1 /* Pods-SHMDatabase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +426,7 @@
 		};
 		8F7C72882181BA530062000C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E0BCD9CFA30B3C9E47EAEC6 /* Pods-SHMDatabase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

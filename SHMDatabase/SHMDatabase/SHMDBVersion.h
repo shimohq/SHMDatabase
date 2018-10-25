@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SHMDBVersion : NSObject
-
+@property (assign, nonatomic) int version;
 @end
 
 NS_ASSUME_NONNULL_END

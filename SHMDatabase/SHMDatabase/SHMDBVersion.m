@@ -9,5 +9,7 @@
 #import "SHMDBVersion.h"
 
 @implementation SHMDBVersion
-
++ (NSDictionary *)modelPropertiesSqliteKeywords {
+    return @{ @"version" : @"UNIQUE" };
+}
 @end

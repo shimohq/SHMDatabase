@@ -11,7 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (SHMDatabase)
-
+/**
+ Order by . (in memory)
+ @param columnName  --- must be a int column
+ @param descOrAsc   BOOL  desc - 1 , asc - 0
+ @return a sorted list
+ */
+- (NSArray *)shmdb_orderby:(NSString *)columnName
+              descOrAsc:(BOOL)descOrAsc;
 @end
 
 NS_ASSUME_NONNULL_END
