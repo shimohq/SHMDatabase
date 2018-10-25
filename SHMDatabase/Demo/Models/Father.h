@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class SomeInfo;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Father : NSObject
+@property (copy, nonatomic) NSString *           fatherName;
+@property (copy, nonatomic) NSArray<SomeInfo *> *fatherList;
+
++ (instancetype)randomAFather;
 
 @end
 

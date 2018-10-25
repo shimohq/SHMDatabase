@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SomeInfo : NSObject
 
+@property (copy, nonatomic) NSString *infoStr;
+@property (nonatomic) int infoID;
+
 @end
 
 NS_ASSUME_NONNULL_END

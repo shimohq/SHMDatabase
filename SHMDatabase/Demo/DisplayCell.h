@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class AnyModel ;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DisplayCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UILabel *lbTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lbContent;
+@property (strong, nonatomic) AnyModel *model ;
 @end
 
 NS_ASSUME_NONNULL_END

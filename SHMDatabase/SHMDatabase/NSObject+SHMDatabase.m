@@ -27,7 +27,7 @@ static void *key_pkid = &key_pkid;
     return [objc_getAssociatedObject(self, &key_pkid) intValue];
 }
 static void *key_createtime = &key_createtime;
-- (void)setshmdb_createTime:(long long)shmdb_createTime {
+- (void)setShmdb_createTime:(long long)shmdb_createTime {
     objc_setAssociatedObject(self, &key_createtime, @(shmdb_createTime), OBJC_ASSOCIATION_ASSIGN);
 }
 - (long long)shmdb_createTime {
@@ -35,7 +35,7 @@ static void *key_createtime = &key_createtime;
 }
 
 static void *key_updatetime = &key_updatetime;
-- (void)setshmdb_updateTime:(long long)shmdb_updateTime {
+- (void)setShmdb_updateTime:(long long)shmdb_updateTime {
     objc_setAssociatedObject(self, &key_updatetime, @(shmdb_updateTime), OBJC_ASSOCIATION_ASSIGN);
 }
 - (long long)shmdb_updateTime {
@@ -43,7 +43,7 @@ static void *key_updatetime = &key_updatetime;
 }
 
 static void *key_isdel = &key_isdel;
-- (void)setshmdb_isDel:(BOOL)shmdb_isDel {
+- (void)setShmdb_isDel:(BOOL)shmdb_isDel {
     objc_setAssociatedObject(self, &key_isdel, @(shmdb_isDel), OBJC_ASSOCIATION_ASSIGN);
 }
 - (BOOL)shmdb_isDel {

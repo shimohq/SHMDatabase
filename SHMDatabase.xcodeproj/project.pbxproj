@@ -19,6 +19,12 @@
 		8F7C72952181C1A20062000C /* NSObject+SHMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72942181C1A20062000C /* NSObject+SHMDatabase.m */; };
 		8F7C72982181C2250062000C /* NSArray+SHMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72972181C2250062000C /* NSArray+SHMDatabase.m */; };
 		8F7C729B2181C26D0062000C /* SHMDbTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C729A2181C26D0062000C /* SHMDbTools.m */; };
+		8F7C72A02181CC560062000C /* AnyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C729F2181CC560062000C /* AnyModel.m */; };
+		8F7C72A42181CE460062000C /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72A32181CE460062000C /* Father.m */; };
+		8F7C72A72181CF5A0062000C /* SomeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72A62181CF5A0062000C /* SomeInfo.m */; };
+		8F7C72AA2181CF7E0062000C /* AccessObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72A92181CF7E0062000C /* AccessObj.m */; };
+		8F7C72AD2181D2400062000C /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72AC2181D2400062000C /* DisplayViewController.m */; };
+		8F7C72B12181D74B0062000C /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72B02181D74B0062000C /* DisplayCell.m */; };
 		EB63B07121F70B97D7BBE365 /* Pods_SHMDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06211271BC0696BED8B98182 /* Pods_SHMDatabase.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +55,19 @@
 		8F7C72992181C26D0062000C /* SHMDbTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDbTools.h; sourceTree = "<group>"; };
 		8F7C729A2181C26D0062000C /* SHMDbTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMDbTools.m; sourceTree = "<group>"; };
 		8F7C729C2181C4F00062000C /* SHMDBConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDBConst.h; sourceTree = "<group>"; };
+		8F7C729E2181CC560062000C /* AnyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnyModel.h; sourceTree = "<group>"; };
+		8F7C729F2181CC560062000C /* AnyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnyModel.m; sourceTree = "<group>"; };
+		8F7C72A22181CE460062000C /* Father.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Father.h; sourceTree = "<group>"; };
+		8F7C72A32181CE460062000C /* Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Father.m; sourceTree = "<group>"; };
+		8F7C72A52181CF5A0062000C /* SomeInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeInfo.h; sourceTree = "<group>"; };
+		8F7C72A62181CF5A0062000C /* SomeInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeInfo.m; sourceTree = "<group>"; };
+		8F7C72A82181CF7E0062000C /* AccessObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessObj.h; sourceTree = "<group>"; };
+		8F7C72A92181CF7E0062000C /* AccessObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessObj.m; sourceTree = "<group>"; };
+		8F7C72AB2181D2400062000C /* DisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		8F7C72AC2181D2400062000C /* DisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		8F7C72AE2181D2FB0062000C /* SHMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDatabase.h; sourceTree = "<group>"; };
+		8F7C72AF2181D74B0062000C /* DisplayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayCell.h; sourceTree = "<group>"; };
+		8F7C72B02181D74B0062000C /* DisplayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +113,8 @@
 			children = (
 				8F7C72732181BA500062000C /* AppDelegate.h */,
 				8F7C72742181BA500062000C /* AppDelegate.m */,
+				8F7C729D2181CB560062000C /* Demo */,
 				8F7C72892181BBFE0062000C /* SHMDatabase */,
-				8F7C72762181BA500062000C /* ViewController.h */,
-				8F7C72772181BA500062000C /* ViewController.m */,
 				8F7C72792181BA500062000C /* Main.storyboard */,
 				8F7C727C2181BA530062000C /* Assets.xcassets */,
 				8F7C727E2181BA530062000C /* LaunchScreen.storyboard */,
@@ -109,6 +127,7 @@
 		8F7C72892181BBFE0062000C /* SHMDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				8F7C72AE2181D2FB0062000C /* SHMDatabase.h */,
 				8F7C728A2181BC770062000C /* SHMDatabaseSDK.h */,
 				8F7C728B2181BC770062000C /* SHMDatabaseSDK.m */,
 				8F7C728D2181C0E90062000C /* SHMAutoSqlUtil.h */,
@@ -124,6 +143,35 @@
 				8F7C729C2181C4F00062000C /* SHMDBConst.h */,
 			);
 			path = SHMDatabase;
+			sourceTree = "<group>";
+		};
+		8F7C729D2181CB560062000C /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C72A12181CE2F0062000C /* Models */,
+				8F7C72762181BA500062000C /* ViewController.h */,
+				8F7C72772181BA500062000C /* ViewController.m */,
+				8F7C72AB2181D2400062000C /* DisplayViewController.h */,
+				8F7C72AC2181D2400062000C /* DisplayViewController.m */,
+				8F7C72AF2181D74B0062000C /* DisplayCell.h */,
+				8F7C72B02181D74B0062000C /* DisplayCell.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		8F7C72A12181CE2F0062000C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F7C729E2181CC560062000C /* AnyModel.h */,
+				8F7C729F2181CC560062000C /* AnyModel.m */,
+				8F7C72A22181CE460062000C /* Father.h */,
+				8F7C72A32181CE460062000C /* Father.m */,
+				8F7C72A52181CF5A0062000C /* SomeInfo.h */,
+				8F7C72A62181CF5A0062000C /* SomeInfo.m */,
+				8F7C72A82181CF7E0062000C /* AccessObj.h */,
+				8F7C72A92181CF7E0062000C /* AccessObj.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FBDFD925636FF089FE327408 /* Pods */ = {
@@ -264,10 +312,16 @@
 				8F7C72982181C2250062000C /* NSArray+SHMDatabase.m in Sources */,
 				8F7C72782181BA500062000C /* ViewController.m in Sources */,
 				8F7C72922181C15A0062000C /* SHMDBVersion.m in Sources */,
+				8F7C72A02181CC560062000C /* AnyModel.m in Sources */,
+				8F7C72A72181CF5A0062000C /* SomeInfo.m in Sources */,
 				8F7C728F2181C0E90062000C /* SHMAutoSqlUtil.m in Sources */,
 				8F7C72952181C1A20062000C /* NSObject+SHMDatabase.m in Sources */,
 				8F7C72832181BA530062000C /* main.m in Sources */,
 				8F7C728C2181BC770062000C /* SHMDatabaseSDK.m in Sources */,
+				8F7C72AA2181CF7E0062000C /* AccessObj.m in Sources */,
+				8F7C72AD2181D2400062000C /* DisplayViewController.m in Sources */,
+				8F7C72A42181CE460062000C /* Father.m in Sources */,
+				8F7C72B12181D74B0062000C /* DisplayCell.m in Sources */,
 				8F7C72752181BA500062000C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

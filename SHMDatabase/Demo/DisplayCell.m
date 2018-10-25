@@ -7,8 +7,20 @@
 //
 
 #import "DisplayCell.h"
+#import "AnyModel.h"
+#import <YYModel/YYModel.h>
+#import "SHMDatabase.h"
 
 @implementation DisplayCell
+
+- (void)setModel:(AnyModel *)model {
+    _model = model ;
+    
+    self.lbTitle.text =
+    [NSString stringWithFormat:@"pkid %d, t:%@, ct:%lld, ut:%lld",model.pkid,model.title,model.shmdb_createTime,model.shmdb_updateTime] ;
+    self.img.image = model.image;
+    self.lbContent.text = [NSString stringWithFormat:@"%@",[model yy_modelToJSONObject]] ;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

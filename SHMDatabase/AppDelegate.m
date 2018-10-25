@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SHMDatabase/SHMDatabase.h"
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask,
+                                                         YES);
+    NSString *aPath = [paths objectAtIndex:0];
+    aPath =
+    [aPath stringByAppendingString:@"/database"];
+    [SHMDatabaseSDK sharedInstance].isDebugMode = YES;
+    [[SHMDatabaseSDK sharedInstance] configureDBWithPath:aPath];
+
+    
+    
     return YES;
 }
 

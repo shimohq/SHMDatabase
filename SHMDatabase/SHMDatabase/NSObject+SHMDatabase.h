@@ -10,8 +10,6 @@
 
 extern NSString *const kPkid ;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface NSObject (SHMDatabase)
 // Default columns
 @property (nonatomic) int       pkid; // primaryKey
@@ -107,4 +105,3 @@ modelPropertiesSqliteKeywords; // set sqlite Constraints of property
 
 @end
 
-NS_ASSUME_NONNULL_END

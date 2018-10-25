@@ -7,17 +7,50 @@
 //
 
 #import "DisplayViewController.h"
+#import "AnyModel.h"
+#import "DisplayCell.h"
+#import "SHMDatabase.h"
 
-@interface DisplayViewController ()
-
+@interface DisplayViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (nonatomic, copy) NSArray *             list;
 @end
 
 @implementation DisplayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+ 
+    self.list = ({
+        NSArray *list = [AnyModel shmdb_findAll];
+        list;
+    });
+    
+    self.table.dataSource = self;
+    self.table.delegate   = self;
 }
+
+#pragma mark - UITableViewDataSource UITableViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return self.list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DisplayCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:@"DisplayCell"];
+    cell.model = self.list[indexPath.row] ;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 521;
+}
+
+
 
 /*
 #pragma mark - Navigation

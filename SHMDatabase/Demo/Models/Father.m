@@ -7,7 +7,28 @@
 //
 
 #import "Father.h"
+#import "SomeInfo.h"
 
 @implementation Father
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"fatherList" : [SomeInfo class],
+             };
+}
+
++ (instancetype)randomAFather {
+    int randomNum = arc4random() % 100;
+    ;
+    
+    Father *f    = [Father new];
+    f.fatherName = [NSString stringWithFormat:@"fffatherff%d", randomNum];
+    
+    SomeInfo *info = [SomeInfo new];
+    info.infoStr   = [@(randomNum) stringValue];
+    info.infoID    = randomNum;
+    f.fatherList   = @[ info ];
+    
+    return f;
+}
 @end

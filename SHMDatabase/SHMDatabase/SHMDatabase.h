@@ -9,5 +9,10 @@
 #ifndef SHMDatabase_h
 #define SHMDatabase_h
 
+#import "NSArray+SHMDatabase.h"
+#import "NSObject+SHMDatabase.h"
+#import "SHMDatabaseSDK.h"
+#import "SHMDBConst.h"
+
 
 #endif /* SHMDatabase_h */

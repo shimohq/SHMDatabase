@@ -25,7 +25,6 @@
 
 + (instancetype)customRandomModel {
     int randomNum = arc4random() % 100;
-    ;
     
     AnyModel *m1 = [AnyModel new]; // 需设置主键
     m1.age       = randomNum;
