@@ -78,10 +78,10 @@ static void *key_isdel = &key_isdel;
             NSString *sql = [sqlUTIL sqlCreateTableWithClass:[self class]];
             bReturn       = [db executeUpdate:sql];
             if (bReturn) {
-                XTFMDBLog(@"shmdb_db create %@ success", tableName);
+                SHMDBLog(@"shmdb_db create %@ success", tableName);
             }
             else {
-                XTFMDBLog(@"shmdb_db create %@ fail", tableName);
+                SHMDBLog(@"shmdb_db create %@ fail", tableName);
             }
         }];
     }
@@ -159,10 +159,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
             }
             
             if (bSuccess) {
-                XTFMDBLog(@"shmdb_db transaction insert Successfrom index :%d", i);
+                SHMDBLog(@"shmdb_db transaction insert Successfrom index :%d", i);
             }
             else { // error
-                XTFMDBLog(@"shmdb_db transaction insert Failure from index :%d", i);
+                SHMDBLog(@"shmdb_db transaction insert Failure from index :%d", i);
                 *rollback   = TRUE;
                 bAllSuccess = FALSE;
                 break;
@@ -170,11 +170,11 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         }
         
         if (bAllSuccess) {
-            XTFMDBLog(@"shmdb_db transaction insert %@ all complete\n\n",
+            SHMDBLog(@"shmdb_db transaction insert %@ all complete\n\n",
                       NSStringFromClass([self class]));
         }
         else {
-            XTFMDBLog(@"shmdb_db transaction insert %@ all fail\n\n",
+            SHMDBLog(@"shmdb_db transaction insert %@ all fail\n\n",
                       NSStringFromClass([self class]));
         }
         
@@ -245,7 +245,7 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
             return [self shmdb_updateWhereByProp:getOneUniqueKey];
         }
         else {
-            XTFMDBLog(@"shmdb_db update Failed from tb %@ \n no primary key\n",
+            SHMDBLog(@"shmdb_db update Failed from tb %@ \n no primary key\n",
                       NSStringFromClass([self class]));
             return NO;
         }
@@ -270,10 +270,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         bSuccess = [db executeUpdate:[sqlUTIL sqlUpdateSetWhereWithModel:self
                                                                  whereBy:propName]];
         if (bSuccess) {
-            XTFMDBLog(@"shmdb_db update success from tb %@ \n\n", tableName);
+            SHMDBLog(@"shmdb_db update success from tb %@ \n\n", tableName);
         }
         else {
-            XTFMDBLog(@"shmdb_db update fail from tb %@ \n\n", tableName);
+            SHMDBLog(@"shmdb_db update fail from tb %@ \n\n", tableName);
         }
     }];
     
@@ -296,10 +296,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
             [db executeUpdate:[sqlUTIL sqlUpdateSetWhereWithModel:model
                                                           whereBy:propName]];
             if (bSuccess) {
-                XTFMDBLog(@"shmdb_db transaction update Successfrom index :%d", i);
+                SHMDBLog(@"shmdb_db transaction update Successfrom index :%d", i);
             }
             else {
-                XTFMDBLog(@"shmdb_db transaction update Failure from index :%d", i);
+                SHMDBLog(@"shmdb_db transaction update Failure from index :%d", i);
                 *rollback   = TRUE;
                 bAllSuccess = FALSE;
                 break;
@@ -307,10 +307,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         }
         
         if (bAllSuccess) {
-            XTFMDBLog(@"shmdb_db transaction update all complete \n\n");
+            SHMDBLog(@"shmdb_db transaction update all complete \n\n");
         }
         else {
-            XTFMDBLog(@"shmdb_db transaction update all fail \n\n");
+            SHMDBLog(@"shmdb_db transaction update all fail \n\n");
         }
     }];
     
@@ -361,7 +361,7 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
     
     __block NSMutableArray *resultList = [@[] mutableCopy];
     [QUEUE inDatabase:^(FMDatabase *db) {
-        XTFMDBLog(@"sql :\n %@", sql);
+        SHMDBLog(@"sql :\n %@", sql);
         FMResultSet *rs = [db executeQuery:sql];
         while ([rs next]) {
             NSDictionary *rstDic =
@@ -384,7 +384,7 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
 + (id)shmdb_anyFuncWithSql:(NSString *)sql {
     __block id val;
     [QUEUE inDatabase:^(FMDatabase *db) {
-        XTFMDBLog(@"sql :\n %@", sql);
+        SHMDBLog(@"sql :\n %@", sql);
         [db executeStatements:sql
               withResultBlock:^int(NSDictionary *resultsDictionary) {
                   val = [resultsDictionary.allValues lastObject];
@@ -487,10 +487,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         bSuccess = [db executeUpdate:[sqlUTIL sqlDeleteWithTableName:tableName
                                                                where:strWhere]];
         if (bSuccess) {
-            XTFMDBLog(@"shmdb_db delete model success in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db delete model success in %@\n\n", tableName);
         }
         else {
-            XTFMDBLog(@"shmdb_db delete model fail in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db delete model fail in %@\n\n", tableName);
         }
     }];
     
@@ -507,10 +507,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
     [QUEUE inDatabase:^(FMDatabase *db) {
         bSuccess = [db executeUpdate:[sqlUTIL sqlDrop:tableName]];
         if (bSuccess) {
-            XTFMDBLog(@"shmdb_db drop %@ success\n\n", tableName);
+            SHMDBLog(@"shmdb_db drop %@ success\n\n", tableName);
         }
         else {
-            XTFMDBLog(@"shmdb_db drop %@ fail\n\n", tableName);
+            SHMDBLog(@"shmdb_db drop %@ fail\n\n", tableName);
         }
     }];
     
@@ -530,10 +530,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         bSuccess =
         [db executeUpdate:[sqlUTIL sqlAlterAdd:name type:type table:tableName]];
         if (bSuccess) {
-            XTFMDBLog(@"shmdb_db alter add success in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db alter add success in %@\n\n", tableName);
         }
         else {
-            XTFMDBLog(@"shmdb_db alter add fail in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db alter add fail in %@\n\n", tableName);
         }
     }];
     return bSuccess;
@@ -550,10 +550,10 @@ typedef NS_ENUM(NSUInteger, XTFMDB_insertWay) {
         bSuccess = [db executeUpdate:[sqlUTIL sqlAlterRenameOldTable:tableName
                                                       toNewTableName:name]];
         if (bSuccess) {
-            XTFMDBLog(@"shmdb_db alter rename success in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db alter rename success in %@\n\n", tableName);
         }
         else {
-            XTFMDBLog(@"shmdb_db alter rename fail in %@\n\n", tableName);
+            SHMDBLog(@"shmdb_db alter rename fail in %@\n\n", tableName);
         }
     }];
     return bSuccess;

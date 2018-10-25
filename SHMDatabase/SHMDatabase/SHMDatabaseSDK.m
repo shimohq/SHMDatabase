@@ -46,7 +46,7 @@
 
 - (void)configureDBWithPath:(NSString *)finalPath {
     finalPath = SQLITE_NAME(finalPath);
-    XTFMDBLog(@"shmdb_db path :\n%@", finalPath);
+    SHMDBLog(@"shmdb_db path :\n%@", finalPath);
     DB = [FMDatabase databaseWithPath:finalPath];
     [DB open];
     
@@ -67,11 +67,11 @@
 
 - (BOOL)verify {
     if (!DB) {
-        XTFMDBLog(@"shmdb_db not exist");
+        SHMDBLog(@"shmdb_db not exist");
         return FALSE;
     }
     if (![DB open]) {
-        XTFMDBLog(@"shmdb_db open failed");
+        SHMDBLog(@"shmdb_db open failed");
         return FALSE;
     }
     
@@ -83,7 +83,7 @@
     [QUEUE inDatabase:^(FMDatabase *db) {
         bExist = [db tableExists:tableName];
         if (!bExist) {
-            XTFMDBLog(@"shmdb_db %@ table not created", tableName);
+            SHMDBLog(@"shmdb_db %@ table not created", tableName);
         }
     }];
     return bExist;
@@ -97,14 +97,14 @@
     NSString *tableName = NSStringFromClass(tableCls);
     int       dbVersion = self.version;
     if (version <= dbVersion) {
-        XTFMDBLog(@"shmdb_db already Upgraded. v%d for table %@", version, tableName);
+        SHMDBLog(@"shmdb_db already Upgraded. v%d for table %@", version, tableName);
         return;
     }
     if (![self isTableExist:tableName]) {
         return;
     }
     
-    XTFMDBLog(
+    SHMDBLog(
               @"shmdb_db upgrade start \ntable : %@ \nparamsAdd : %@\ndbversion : %d",
               tableName,
               paramsAdd,
@@ -115,7 +115,7 @@
         NSString *iosType = [tableCls iosTypeWithPropName:key];
         NSString *sqlType = [sqlUTIL sqlTypeWithType:iosType];
         if (!iosType) {
-            XTFMDBLog(@"shmdb_db Upgraded fail no prop in %@", tableName);
+            SHMDBLog(@"shmdb_db Upgraded fail no prop in %@", tableName);
             isError = YES;
             *stop   = YES;
         }
@@ -129,7 +129,7 @@
         return;
     
     self.version = version;
-    XTFMDBLog(@"shmdb_db Upgraded v%d complete", version);
+    SHMDBLog(@"shmdb_db Upgraded v%d complete", version);
 }
 
 @end

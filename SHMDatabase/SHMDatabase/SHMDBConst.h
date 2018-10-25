@@ -10,16 +10,16 @@
 #ifndef SHMDBConst_h
 #define SHMDBConst_h
 
-#define XTFMDBLog1(format, ...)              \
+#define SHMDBLog1(format, ...)              \
 do {                                     \
-fprintf(stderr, "🌙🌙🌙xtfmdb🌙🌙🌙\n");   \
+fprintf(stderr, "🌙🌙🌙shmdb🌙🌙🌙\n");   \
 (NSLog)((format), ##__VA_ARGS__);    \
-fprintf(stderr, "🌙🌙🌙xtfmdb🌙🌙🌙\n\n"); \
+fprintf(stderr, "🌙🌙🌙shmdb🌙🌙🌙\n\n"); \
 } while (0)
 
-#define XTFMDBLog(format, ...)               \
+#define SHMDBLog(format, ...)               \
 if (SHMDB_isDebug) {                    \
-XTFMDBLog1((format), ##__VA_ARGS__); \
+SHMDBLog1((format), ##__VA_ARGS__); \
 };
 
 #endif /* SHMDBConst_h */

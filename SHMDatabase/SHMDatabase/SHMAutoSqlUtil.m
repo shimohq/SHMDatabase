@@ -246,7 +246,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                 case shmdb_type_create: {
                     NSString *resultSql = [NSString
                                            stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ ( %@ )", tableName, [strProperties substringToIndex:strProperties.length - 1]];
-                    XTFMDBLog(@"shmdb_db sql create : \n%@\n\n", resultSql);
+                    SHMDBLog(@"shmdb_db sql create : \n%@\n\n", resultSql);
                     return resultSql;
                 } break;
                 case shmdb_type_insert: {
@@ -259,7 +259,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                      tableName,
                      strProperties,
                      strQuestions];
-                    XTFMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
+                    SHMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
                     return strResult;
                 } break;
                 case shmdb_type_insertOrIgnore: {
@@ -272,7 +272,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                                            tableName,
                                            strProperties,
                                            strQuestions];
-                    XTFMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
+                    SHMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
                     return strResult;
                 } break;
                 case shmdb_type_insertOrReplace: {
@@ -285,7 +285,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                                            tableName,
                                            strProperties,
                                            strQuestions];
-                    XTFMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
+                    SHMDBLog(@"shmdb_db sql insert : \n%@\n\n", SAFELY_LOG_FORMAT(strResult));
                     return strResult;
                 } break;
                 case shmdb_type_update: {
@@ -295,7 +295,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                                           stringWithFormat:@"%@ = '%@'", whereByProp, dicModel[whereByProp]];
                     NSString *strResult =
                     [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@", tableName, strProperties, whereStr];
-                    XTFMDBLog(@"shmdb_db sql update : \n%@", SAFELY_LOG_FORMAT(strResult));
+                    SHMDBLog(@"shmdb_db sql update : \n%@", SAFELY_LOG_FORMAT(strResult));
                     return strResult;
                 } break;
                 default:
@@ -349,7 +349,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
     else if ([strType containsString:@"NSDate"]) {
         return @"BIGINT";
     }
-    XTFMDBLog(@"shmdb_db no type to transform !!");
+    SHMDBLog(@"shmdb_db no type to transform !!");
     return @"TEXT"; // custom Cls or default
 }
 
