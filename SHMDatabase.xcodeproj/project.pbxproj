@@ -25,6 +25,8 @@
 		8F7C72AA2181CF7E0062000C /* AccessObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72A92181CF7E0062000C /* AccessObj.m */; };
 		8F7C72AD2181D2400062000C /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72AC2181D2400062000C /* DisplayViewController.m */; };
 		8F7C72B12181D74B0062000C /* DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72B02181D74B0062000C /* DisplayCell.m */; };
+		8F7C72B32182C68E0062000C /* SHMDatabase.spec in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C72B22182C68D0062000C /* SHMDatabase.spec */; };
+		8F7C72B72182C74B0062000C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8F7C72B62182C74B0062000C /* Podfile */; };
 		EB63B07121F70B97D7BBE365 /* Pods_SHMDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06211271BC0696BED8B98182 /* Pods_SHMDatabase.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		8F7C72AE2181D2FB0062000C /* SHMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMDatabase.h; sourceTree = "<group>"; };
 		8F7C72AF2181D74B0062000C /* DisplayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayCell.h; sourceTree = "<group>"; };
 		8F7C72B02181D74B0062000C /* DisplayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayCell.m; sourceTree = "<group>"; };
+		8F7C72B22182C68D0062000C /* SHMDatabase.spec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SHMDatabase.spec; sourceTree = SOURCE_ROOT; };
+		8F7C72B62182C74B0062000C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		8F7C72722181BA500062000C /* SHMDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				8F7C72B62182C74B0062000C /* Podfile */,
+				8F7C72B22182C68D0062000C /* SHMDatabase.spec */,
 				8F7C72732181BA500062000C /* AppDelegate.h */,
 				8F7C72742181BA500062000C /* AppDelegate.m */,
 				8F7C729D2181CB560062000C /* Demo */,
@@ -242,8 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F7C72B72182C74B0062000C /* Podfile in Resources */,
 				8F7C72802181BA530062000C /* LaunchScreen.storyboard in Resources */,
 				8F7C727D2181BA530062000C /* Assets.xcassets in Resources */,
+				8F7C72B32182C68E0062000C /* SHMDatabase.spec in Resources */,
 				8F7C727B2181BA500062000C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
