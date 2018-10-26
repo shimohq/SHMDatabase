@@ -96,8 +96,7 @@ extern NSString *const kPkid ;
 #pragma mark - Constraints config
 
 // props Sqlite Keywords
-+ (NSDictionary *)
-modelPropertiesSqliteKeywords; // set sqlite Constraints of property
++ (NSDictionary *)modelPropertiesSqliteKeywords; // set sqlite Constraints of property
 // ignore Properties . these properties will not join db CURD .
 + (NSArray *)ignoreProperties;
 // Container property , value should be Class or Class name. Same as YYmodel .

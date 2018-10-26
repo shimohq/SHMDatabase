@@ -31,8 +31,8 @@
     self.title                  = @"SHMDatabase";
     self.datasource             = @[
                                     @"create",
-                                    @"select",
-                                    @"selectWhere",
+                                    @"find",
+                                    @"findWhere",
                                     @"insert",
                                     @"insertOrIgnore",
                                     @"insertOrReplace",
@@ -83,7 +83,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [AnyModel shmdb_createTable];
 }
 
-- (void)selectAction {
+- (void)findAction {
     NSArray *list = [AnyModel shmdb_findAll];
     for (AnyModel *model in list) {
         NSLog(@"%d", model.pkid);
@@ -92,7 +92,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self displayJump];
 }
 
-- (void)selectWhereAction {
+- (void)findWhereAction {
     NSArray *list = [AnyModel shmdb_findWhere:@"age > 10 "];
     NSLog(@"list : %@ \ncount:%@", list, @(list.count));
 }

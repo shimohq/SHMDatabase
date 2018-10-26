@@ -309,7 +309,7 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
     }
 }
 
-- (NSString *)sqlTypeWithType : (NSString *)strType {
+- (NSString *)sqlTypeWithType:(NSString *)strType {
     if ([strType containsString:@"int"] || [strType containsString:@"Integer"]) {
         return @"INTEGER";
     }
