@@ -50,8 +50,7 @@ NSString *yourDbPath = @".../shimoDB";
 [[SHMDatabaseSDK sharedInstance] configureDBWithPath:yourDbPath];
 
 ```
-
-1. 插入
+2. 插入
 ```
 // insert
 - (BOOL)shmdb_insert;
@@ -68,7 +67,7 @@ NSString *yourDbPath = @".../shimoDB";
 // upsert
 - (BOOL)shmdb_upsertWhereByProp:(NSString *)propName;
 ```
-以下m1代表AnyModel.class下的实例.
+以下m1代表AnyModel.class下的实例
 ```
 [m1 shmdb_insert];//单个
 [AnyModel shmdb_insertList:list];//批量
@@ -83,7 +82,7 @@ NSString *yourDbPath = @".../shimoDB";
   
   ```
   
-  2. 更新
+  3. 更新
   ```
   // update by pkid .
   - (BOOL)shmdb_update; // Update default update by pkid. if pkid nil, update by a
@@ -105,7 +104,7 @@ NSString *yourDbPath = @".../shimoDB";
   
   ```
   
-  3. 查询
+  4. 查询
   ```
   + (NSArray *)shmdb_findAll;
   + (NSArray *)shmdb_findWhere:(NSString *)strWhere; // param e.g. @" pkid = '1' "
@@ -133,7 +132,7 @@ NSString *yourDbPath = @".../shimoDB";
   
   ```
   
-  4. 删除
+  5. 删除
   ```
   [m1 shmdb_deleteModel];//删除记录
   [AnyModel shmdb_deleteModelWhere:@"name == 'peter'"];
@@ -141,7 +140,7 @@ NSString *yourDbPath = @".../shimoDB";
   
   ```
   
-  5. 常用函数
+  6. 常用函数
   ```
   // func execute Statements
   + (id)shmdb_anyFuncWithSql:(NSString *)sql;
@@ -167,7 +166,7 @@ NSString *yourDbPath = @".../shimoDB";
   
   ```
   
-  6. 配置约束
+  7. 配置约束
   
   需要更深入的配置建表, 在AnyModel类中重载三个方法
   ```
@@ -213,7 +212,7 @@ NSString *yourDbPath = @".../shimoDB";
   @end
   ```
   
-  1. 升级
+  8. 升级
   ```
   /**
    DB Version Upgrade
@@ -241,6 +240,6 @@ NSString *yourDbPath = @".../shimoDB";
                                                                                                                  * demo地址 [https://git.shimo.im/ios/SHMDatabase](https://git.shimo.im/ios/SHMDatabase)
                                                                                                                  * mac上的sqlite可视化工具推荐 SQLite Professional
                                                                                                                  
-                                                                                                                 使用中如有任何疑问,请微信或钉钉于我 ﻿xietianchen@shimo.im 
+                                                                                                                 使用中如有任何疑问,请微信或钉钉于我 ﻿@谢天宸﻿ 
                                                                                                                  
 
