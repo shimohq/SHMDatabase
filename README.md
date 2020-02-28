@@ -14,44 +14,44 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 SHMDatabase is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
-
+podfile
 ```ruby
 pod 'SHMDatabase' 
 ```
+file.m
 ```
-#import <SHMDatabase.h>
+#import <SHMDatabase/SHMDatabase.h>
 ```
 
-设计初衷: 
-快速一站式sqlite数据库搭建. 调用更轻.快. 无需关注细节 .
+### 设计初衷: 
+* 快速一站式sqlite数据库搭建. 调用更轻.快. 无需关注细节 .
 
-特性:
-无基类, 无入侵性. 可直接在第三方类上建表 .
-直接脱离项目中控制表的繁杂代码, Model直接进入CURD操作.脱离sql语句 .   
-自带默认字段pkid, shmdb_createTime, shmdb_updateTime, shmdb_isDel. 无需关注主键和创建更新时间变化处理 .
-自动建表 .
-主键自增. 插入不需设主键. 默认pkid .
-任何操作. 线程安全 .
-批量操作默认实务.以及失败回滚  .
-支持各容器类存储. NSArray, NSDictionary. 以及容器中带有自定义类等. 能处理任意嵌套组合 .
-数据库升级简单, 一行代码完成数据库多表升级. 只需设置一个新的数据库版本号 .
-每个字段可自定义设置关键字. 已经集成默认关键字, 无需再写非空和默认值( NOT NULL, DEFAULT''字符类型默认值,DEFAULT'0'数字类型默认值 ) .
-支持忽略属性, 比如ViewModel 可指定哪些字段不参与CURD操作 .  
-常规函数,数量,求和,最值等 .
-支持NSData类型 .
-支持UIImage类型 .
+### 特性:
+- 无基类, 无入侵性. 可直接在第三方类上建表 .
+- 直接脱离项目中控制表的繁杂代码, Model直接进入CURD操作.脱离sql语句 .   
+- 自带默认字段pkid, shmdb_createTime, shmdb_updateTime, shmdb_isDel. 无需关注主键和创建更新时间变化处理 .
+- 自动建表 .
+- 主键自增. 插入不需设主键. 默认pkid .
+- 任何操作. 线程安全 .
+- 批量操作默认实务.以及失败回滚  .
+- 支持各容器类存储. NSArray, NSDictionary. 以及容器中带有自定义类等. 能处理任意嵌套组合 .
+- 数据库升级简单, 一行代码完成数据库多表升级. 只需设置一个新的数据库版本号 .
+- 每个字段可自定义设置关键字. 已经集成默认关键字, 无需再写非空和默认值( NOT NULL, DEFAULT''字符类型默认值,DEFAULT'0'数字类型默认值 ) .
+- 支持忽略属性, 比如ViewModel 可指定哪些字段不参与CURD操作 .  
+- 常规函数,数量,求和,最值等 .
+- 支持NSData类型 .
+- 支持UIImage类型 .
 
-设计思路:
-运用 iOS Runtime 在目前最权威的sqlite开源库FMDB之上增加ORM模型关系映射,  并使用Category的方式脱离基类, 并动态加入默认字段. 使任何类都能建表.
-
-图片: https://images-cdn.shimo.im/CfG7jytREwoQhB8N/SHMDatabase.png
+### 设计思路:
 
 
-接入方式:
-如何使用: 
+![图片](https://images-cdn.shimo.im/CfG7jytREwoQhB8N/SHMDatabase.png)
 
+---
 
-启动时配置
+## HOW TO USE
+
+- 在启动时配置
 ```
 在AppDelegate didFinishLaunchingWithOptions中完成配置
     [SHMDatabaseSDK sharedInstance].isDebugMode = YES; //是否打印内部log
@@ -59,7 +59,7 @@ pod 'SHMDatabase'
     [[SHMDatabaseSDK sharedInstance] configureDBWithPath:yourDbPath];
  ```   
 
-插入
+- 插入
 ```
 // insert
 - (BOOL)shmdb_insert;
@@ -92,7 +92,7 @@ upsert
     [m1 shmdb_upsertWhereByProp:@"name"];//存在则更新,不存在则插入.    
 ```    
 
-更新
+- 更新
 ```
 // update by pkid .
 - (BOOL)shmdb_update; // Update default update by pkid. if pkid nil, update by a unique prop if has .
@@ -111,7 +111,7 @@ e.g.
     [m1 shmdb_updateWhereByProp:@"name"];//更新此对象(按手动指定某字段)
     [AnyModel shmdb_updateList:list whereByProp:@"name"];//批量
 ```
-查询
+- 查询
 ```
 + (NSArray *)shmdb_findAll;
 + (NSArray *)shmdb_findWhere:(NSString *)strWhere; // param e.g. @" pkid = '1' "
@@ -140,7 +140,7 @@ e.g.
     item = [AnyModel shmdb_findFirstWithSql:@"select * from AnyModel where age == 111"] ;//自定义sql语句, 查询单个
 ```    
 
-删除
+- 删除
 ```
 - (BOOL)shmdb_deleteModel;
 + (BOOL)shmdb_deleteModelWhere:(NSString *)strWhere; // param e.g. @" pkid = '1' "
@@ -156,7 +156,7 @@ e.g.
     [AnyModel shmdb_dropTable]; //删除表
 ```    
 
-常用函数
+- 常用函数
 ```
 // func execute Statements
 + (id)shmdb_anyFuncWithSql:(NSString *)sql;
@@ -183,7 +183,7 @@ e.g.
   id val = [AnyModel shmdb_anyFuncWithSql:@"..."] ;
 ```  
 
-排序
+- 排序
 ```
 /**
  Order by . (in memory)
@@ -198,7 +198,7 @@ e.g.
    [list shmdb_orderby:@"age" descOrAsc:1]; //按年龄降序排列
    ```
 
-配置约束
+- 配置约束
 需要更深入的配置建表, 在AnyModel类中重载三个方法
 ```
 // props Sqlite Keywords
@@ -211,21 +211,21 @@ e.g.
 + (NSDictionary *)modelContainerPropertyGenericClass;
 ```
 
- 配置属性约束
+    - 配置属性约束
 modelPropertiesSqliteKeywords , 配置属性约束, 非空与默认值已经加入无需配置, 例如在这里可以指定某字段的唯一性
 ```
 + (NSDictionary *)modelPropertiesSqliteKeywords {
   return @{@"name":@"UNIQUE"} ;
 }
 ```
-配置不想参加建表的字段
+    - 配置不想参加建表的字段
 ```
 ignoreProperties, 配置不想参加建表的字段. 例如ViewModel相关的属性等.
 + (NSArray *)ignoreProperties {
   return @[@"a1",@"a2"] ;
 }
 ```
-配置容器类中的所需要存放的数据类型
+    - 配置容器类中的所需要存放的数据类型
 ```
 modelContainerPropertyGenericClass, 处理在容器类型中嵌套有其他类.
 @class Shadow, Border, Attachment;
@@ -246,7 +246,7 @@ modelContainerPropertyGenericClass, 处理在容器类型中嵌套有其他类.
 }
 @end
 ```
-升级
+- 升级
 ```
 /**
  DB Version Upgrade
