@@ -2,13 +2,13 @@
 Pod::Spec.new do |s|
 
 s.name         = "SHMDatabase"
-s.version      = "0.0.1"
+s.version      = "1.0.0"
 s.summary      = "iOS石墨数据库组件"
-s.homepage     = "https://git.shimo.im/ios/SHMDatabase"
+s.homepage     = "https://github.com/shimohq/SHMDatabase"
 s.license      = { :type => "MIT", :file => "LICENSE" }
-s.author       = { "xietianchen" => "xietianchen@shimo.im" }
+s.author       = { "xietianchen" => "akateason@qq.com" }
 s.platform     = :ios, "8.0"
-s.source       = { :git => "https://git.shimo.im/ios/SHMDatabase", :tag => s.version }
+s.source       = { :git => "https://github.com/shimohq/SHMDatabase", :tag => s.version }
 
 s.source_files  = "SHMDatabase/SHMDatabase/*.{h,m}"
 
