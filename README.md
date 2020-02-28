@@ -4,7 +4,7 @@ SHMDatabase
 
 ## 说明文档
 
-链接：[SHMDatabase石墨iOS数据库框架](https://shimo.im/docs/CLbfUI2w51wlI7td)
+SHMDatabase石墨iOS数据库框架
 
 ## Example
 
