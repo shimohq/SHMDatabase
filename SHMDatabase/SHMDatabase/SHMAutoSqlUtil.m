@@ -385,6 +385,11 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
                                           fromClass:(Class)cls {
     NSMutableDictionary *dic =
     [[model propertyDictionary] mutableCopy]; // propModel
+    NSArray *ignoreList = [m_orginCls ignoreProperties];
+    for (NSString *key in ignoreList) {
+        [dic removeObjectForKey:key];
+    }
+    
     [dic setObject:[model valueForKey:kPkid] forKey:kPkid];
     [dic setObject:[model valueForKey:@"shmdb_createTime"] forKey:@"shmdb_createTime"];
     [dic setObject:[model valueForKey:@"shmdb_updateTime"] forKey:@"shmdb_updateTime"];
