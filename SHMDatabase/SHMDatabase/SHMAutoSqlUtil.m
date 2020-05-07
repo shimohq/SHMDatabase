@@ -390,11 +390,26 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
         [dic removeObjectForKey:key];
     }
     
-    [dic setObject:[model valueForKey:kPkid] forKey:kPkid];
-    [dic setObject:[model valueForKey:@"shmdb_createTime"] forKey:@"shmdb_createTime"];
-    [dic setObject:[model valueForKey:@"shmdb_updateTime"] forKey:@"shmdb_updateTime"];
-    [dic setObject:[model valueForKey:@"shmdb_isDel"] forKey:@"shmdb_isDel"];
+    id pkid = [model valueForKey:kPkid];
+    if (pkid != nil) {
+        [dic setObject:pkid forKey:kPkid];
+    }
+        
+    id creatTime = [model valueForKey:@"shmdb_createTime"];
+    if (creatTime != nil) {
+        [dic setObject:creatTime forKey:@"shmdb_createTime"];
+    }
     
+    id updateTime = [model valueForKey:@"shmdb_updateTime"];
+    if (updateTime != nil) {
+        [dic setObject:updateTime forKey:@"shmdb_updateTime"];
+    }
+    
+    id isDel = [model valueForKey:@"shmdb_isDel"];
+    if (isDel != nil) {
+        [dic setObject:isDel forKey:@"shmdb_isDel"];
+    }
+                
     NSMutableDictionary *tmpDic = [dic mutableCopy];
     for (NSString *key in dic) {
         id val = dic[key];
@@ -469,8 +484,8 @@ typedef NS_ENUM(NSUInteger, TypeOfAutoSql) {
             base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
-- (NSDictionary *)getResultDicFromClass:(Class)cls
-                              resultSet:(FMResultSet *)resultSet {
+- (nullable NSDictionary *)getResultDicFromClass:(Class)cls
+                                       resultSet:(FMResultSet *)resultSet {
     m_orginCls                  = cls;
     NSMutableDictionary *tmpDic = [[resultSet resultDictionary] mutableCopy];
     if (!tmpDic)

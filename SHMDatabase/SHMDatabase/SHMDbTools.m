@@ -437,7 +437,7 @@
             }
         }
         
-        [result setObject:type_str forKey:@"type"];
+        if (type_str != nil) [result setObject:type_str forKey:@"type"];
     }
     
     [result setObject:attributeArray forKey:@"attribute"];

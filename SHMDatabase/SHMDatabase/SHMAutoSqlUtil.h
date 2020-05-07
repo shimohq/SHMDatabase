@@ -34,8 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)sqlAlterRenameOldTable:(NSString *)oldTableName
                       toNewTableName:(NSString *)newTableName;
 
-- (NSDictionary *)getResultDicFromClass:(Class)cls
-                              resultSet:(FMResultSet *)resultSet;
+- (nullable NSDictionary *)getResultDicFromClass:(Class)cls
+                                       resultSet:(FMResultSet *)resultSet;
 
 - (NSString *)sqlTypeWithType:(NSString *)strType;
 
