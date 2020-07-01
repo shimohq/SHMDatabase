@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "SHMDatabase"
-s.version      = "1.1.2"
+s.version      = "1.1.3"
 s.summary      = "iOS石墨数据库组件"
 s.homepage     = "https://github.com/shimohq/SHMDatabase"
 s.license      = { :type => "MIT", :file => "LICENSE" }
